@@ -94,8 +94,8 @@ app.get('/', (req, res) => {
 
 app.get('/image', (req, res) => {
     const number = Math.floor(Math.random() * 7);
-    const json = {"frase_filosofica":pokeneas[number]["frase_filosofica"],"imagen":pokeneas[number]["imagen"],}
-    res.send(json+" - Container Id: "+os.hostname())
+    const json = {"frase_filosofica":pokeneas[number]["frase_filosofica"],"imagen":pokeneas[number]["imagen"],"container_id":os.hostname(),}
+    res.send(json)
   })
 
 app.listen(port, () => {
