@@ -1,4 +1,5 @@
 const express = require('express')
+const os = require("os")
 const app = express()
 const port = 3000
 
@@ -94,7 +95,7 @@ app.get('/', (req, res) => {
 app.get('/image', (req, res) => {
     const number = Math.floor(Math.random() * 7);
     const json = {"frase_filosofica":pokeneas[number]["frase_filosofica"],"imagen":pokeneas[number]["imagen"],}
-    res.send(json)
+    res.send(json+" - Container Id: "+os.hostname())
   })
 
 app.listen(port, () => {
